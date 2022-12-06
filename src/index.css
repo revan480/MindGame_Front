@@ -1,14 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: "Mont-Heavy";
+  src: url(./assets/fonts/Mont-Heavy.otf);
+}
+@font-face {
+  font-family: "Mont-Light";
+  src: url(./assets/fonts/Mont-Light.otf);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-::selection {
-  @apply bg-orange-500 text-white;
+* {
+  font-family: "Outfit", sans-serif;
+  @apply outline-none;
 }
 
-/* body {
-  @apply;
-} */
+body {
+  @apply bg-dark-400 text-white;
+}
+
+::selection {
+  @apply bg-white text-primary;
+}
 
 ::-webkit-scrollbar {
   @apply w-2 h-2;
@@ -24,4 +39,8 @@
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-neutral-400;
+}
+
+img {
+  @apply select-none pointer-events-none;
 }
