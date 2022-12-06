@@ -4,7 +4,7 @@ import RequireAuth from "./components/RequireAuth";
 import AuthLayout from "./pages/Auth/AuthLayout";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
-import ConfirmEmail from "./pages/Auth/ConfirmEmail";
+import Confirm from "./pages/Auth/Confirm";
 import Forgot from "./pages/Auth/Forgot";
 import Recover from "./pages/Auth/Recover";
 import LandingLayout from "./pages/Landing/LandingLayout";
@@ -19,7 +19,7 @@ const App = () => {
         <Route path="/auth" element={<AuthLayout />}>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route path="confirm" element={<ConfirmEmail />} />
+          <Route path="confirm" element={<Confirm />} />
           <Route path="forgot" element={<Forgot />} />
           <Route path="recover" element={<Recover />} />
         </Route>

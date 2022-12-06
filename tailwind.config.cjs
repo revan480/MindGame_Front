@@ -18,8 +18,19 @@ module.exports = {
       center: true,
     },
 
+    fontFamily: {
+      MontHeavy: ["Mont-Heavy", "sans-serif"],
+      MontLight: ["Mont-Light", "sans-serif"],
+    },
+
     extend: {
       colors: {
+        primary: "#1b57f2",
+
+        dark: {
+          400: "#101221",
+        },
+
         darkener: {
           50: "rgba(0,0,0,.05)",
           100: "rgba(0,0,0,.1)",
@@ -63,6 +74,11 @@ module.exports = {
           900: "rgba(255,255,255,.9)",
           950: "rgba(255,255,255,.95)",
         },
+      },
+
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-radial-at-top": "radial-gradient(at top, var(--tw-gradient-stops))",
       },
 
       boxShadow: {
