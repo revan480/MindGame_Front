@@ -11,7 +11,7 @@ const Forgot = () => {
     <div onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-center gap-7">
       <h2 className="text-3xl font-bold text-center">Enter your email</h2>
       <InputField label="Email" name="email" register={register} required className="w-full" />
-      <Button className="w-fit">Back to login</Button>
+      <Button className="w-fit">Send confirmation link</Button>
     </div>
   );
 };
