@@ -13,7 +13,7 @@ const Register = () => {
   };
 
   return (
-    <div className="relative h-full py-16 px-32 flex flex-col justify-center gap-y-8">
+    <>
       {/* navigator for login page */}
       <div className="absolute top-8 right-8 uppercase tracking-wider text-xs flex gap-1">
         <p className="font-MontHeavy text-neutral-400">Already have an account?</p>
@@ -22,7 +22,7 @@ const Register = () => {
         </Link>
       </div>
 
-      <h1 className="uppercase font-MontHeavy text-7xl">Register</h1>
+      <h1 className="uppercase font-MontHeavy text-5xl">Register</h1>
 
       {/* form */}
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
@@ -32,7 +32,7 @@ const Register = () => {
 
         <Button className="mt-2">Register</Button>
       </form>
-    </div>
+    </>
   );
 };
 

@@ -9,7 +9,7 @@ const Login = () => {
   const onSubmit = async (data) => {};
 
   return (
-    <div className="relative h-full py-16 px-32 flex flex-col justify-center gap-y-8">
+    <>
       {/* navigator for register page */}
       <div className="absolute top-8 right-8 uppercase tracking-wider text-xs flex gap-1">
         <p className="font-MontHeavy text-neutral-400">Don't have an account?</p>
@@ -18,7 +18,7 @@ const Login = () => {
         </Link>
       </div>
 
-      <h1 className="uppercase font-MontHeavy text-7xl">Login</h1>
+      <h1 className="uppercase font-MontHeavy text-5xl">Login</h1>
 
       {/* form */}
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
@@ -35,7 +35,7 @@ const Login = () => {
       <Link to="/auth/forgot" className="w-fit self-center text-sm font-medium hover:text-primary">
         Forgot your password?
       </Link>
-    </div>
+    </>
   );
 };
 
