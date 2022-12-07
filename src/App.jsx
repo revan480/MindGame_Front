@@ -6,9 +6,9 @@ import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
 import Confirm from "./pages/Auth/Confirm";
 import Forgot from "./pages/Auth/Forgot";
-import Recover from "./pages/Auth/Recover";
 import LandingLayout from "./pages/Landing/LandingLayout";
 import Room from "./pages/Room/Room";
+import Reset from "./pages/Auth/Reset";
 
 const App = () => {
   return (
@@ -21,7 +21,7 @@ const App = () => {
           <Route path="register" element={<Register />} />
           <Route path="confirm" element={<Confirm />} />
           <Route path="forgot" element={<Forgot />} />
-          <Route path="recover" element={<Recover />} />
+          <Route path="reset" element={<Reset />} />
         </Route>
 
         {/* private routes */}

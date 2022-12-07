@@ -1,12 +1,16 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/UI/Button";
 import InputField from "../../components/UI/InputField";
 
 const Register = () => {
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = async (data) => {};
+  const navigate = useNavigate();
+
+  const onSubmit = async (data) => {
+    navigate("/auth/confirm");
+  };
 
   return (
     <div className="relative h-full py-16 px-32 flex flex-col justify-center gap-y-8">
@@ -23,8 +27,8 @@ const Register = () => {
       {/* form */}
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
         <InputField label="Email" name="email" register={register} required />
-        <InputField label="Password" name="password" register={register} required />
-        <InputField label="Confirm password" name="confirmPassword" register={register} required />
+        <InputField label="Password" name="password" type="password" register={register} required />
+        <InputField label="Confirm password" name="confirmPassword" type="password" register={register} required />
 
         <Button className="mt-2">Register</Button>
       </form>

@@ -23,7 +23,7 @@ const Login = () => {
       {/* form */}
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
         <InputField label="Email" name="email" register={register} required />
-        <InputField label="Password" name="password" register={register} required />
+        <InputField label="Password" name="password" type="password" register={register} required />
 
         <Button className="mt-2">Login</Button>
       </form>
