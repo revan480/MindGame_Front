@@ -15,7 +15,7 @@ const InputField = ({
   inputClassName,
 }) => {
   return (
-    <div className={twMerge("relative flex flex-col mb-4", className)}>
+    <div className={twMerge("relative flex flex-col mb-4 w-full", className)}>
       {/* label */}
       {!!label && (
         <label htmlFor={name} className="text-xs font-medium">
@@ -34,7 +34,9 @@ const InputField = ({
           },
         })}
         className={twMerge(
-          "bg-darkener-100 p-3 text-neutral-500 text-xs font-bold rounded-lg shadow-[inset_0px_3px_6px_rgba(0,0,0,.4)]",
+          `${
+            errorMsg ? "bg-red-500 bg-opacity-20" : "bg-darkener-100"
+          } p-3 text-neutral-500 text-xs font-bold rounded-lg shadow-[inset_0px_3px_6px_rgba(0,0,0,.4)]`,
           inputClassName
         )}
       />
