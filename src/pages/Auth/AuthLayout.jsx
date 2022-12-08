@@ -20,7 +20,7 @@ const AuthLayout = () => {
             className="hidden sm:block w-1/2 lg:w-3/5 relative bg-cover bg-center"
             style={{ backgroundImage: `url(${wallpaper})` }}
           >
-            <h1 className="font-MontHeavy text-5xl uppercase absolute left-8 bottom-8">
+            <h1 className="font-bold text-5xl uppercase absolute left-8 bottom-8">
               Mindgame <br /> will blow <br /> your mind
             </h1>
           </div>
