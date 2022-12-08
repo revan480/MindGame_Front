@@ -12,13 +12,13 @@ const Login = () => {
     <>
       {/* navigator for register page */}
       <div className="absolute top-8 right-8 uppercase tracking-wider text-xs flex gap-1">
-        <p className="font-MontHeavy text-neutral-400">Don't have an account?</p>
-        <Link to="/auth/register" className="font-MontHeavy hover:text-primary">
+        <p className="font-bold text-neutral-400">Don't have an account?</p>
+        <Link to="/auth/register" className="font-bold hover:text-primary">
           Sign up
         </Link>
       </div>
 
-      <h1 className="uppercase font-MontHeavy text-5xl">Login</h1>
+      <h1 className="uppercase font-bold text-5xl">Login</h1>
 
       {/* form */}
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">

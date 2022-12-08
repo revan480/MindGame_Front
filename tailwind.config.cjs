@@ -18,11 +18,6 @@ module.exports = {
       center: true,
     },
 
-    fontFamily: {
-      MontHeavy: ["Mont-Heavy", "sans-serif"],
-      MontLight: ["Mont-Light", "sans-serif"],
-    },
-
     extend: {
       colors: {
         primary: "#1b57f2",
