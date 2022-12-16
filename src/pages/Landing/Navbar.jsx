@@ -1,19 +1,28 @@
-import React from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BiMenu } from "react-icons/all";
+import useClickOutside from "../../hooks/useClickOutside";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Navbar = () => {
+  const [toggleMenu, setToggleMenu] = useState(false);
+
+  const navRef = useRef();
+
+  useClickOutside(navRef, () => setToggleMenu(false));
+
   const navigate = useNavigate();
 
   return (
-    <nav className="fixed z-50 w-3/5 top-8 left-1/2 -translate-x-1/2 py-2 px-4 rounded-full bg-darkener-200 shadow-card-200 backdrop-blur-lg">
-      <div className="flex items-center justify-between font-medium text-lg">
+    <nav ref={navRef} className="fixed z-50 h-[60px] w-[90vw] lg:w-4/5 xl:w-3/5 top-8 left-1/2 -translate-x-1/2">
+      <div className="h-full w-full bg-darkener-200 rounded-full px-8 shadow-card-200 backdrop-blur-xl flex items-center justify-between font-medium text-lg">
         {/* left side */}
         <div className="flex items-center gap-9">
           {/* logo */}
           <span className="font-black text-xl text-white">The Mindgame</span>
 
           {/* elements */}
-          <ul className="flex gap-6">
+          <ul className="hidden md:flex gap-6">
             <li>
               <a href="#home" className="cursor-pointer text-neutral-400 hover:text-white duration-300">
                 Home
@@ -24,14 +33,11 @@ const Navbar = () => {
                 How to play
               </a>
             </li>
-            {/* <li>
-              <p className="cursor-pointer text-neutral-400 hover:text-white duration-300">Who we are</p>
-            </li> */}
           </ul>
         </div>
 
         {/* right */}
-        <div className="flex gap-3">
+        <div className="hidden md:flex gap-3">
           <button
             className="bg-transparent py-1 px-4 rounded-full border border-lightener-200 hover:text-white duration-300"
             onClick={() => navigate("/auth/login")}
@@ -45,7 +51,50 @@ const Navbar = () => {
             Register
           </button>
         </div>
+
+        {/* burger */}
+        <BiMenu className="text-3xl md:hidden cursor-pointer" onClick={() => setToggleMenu((prev) => !prev)} />
       </div>
+
+      {/* menu */}
+      <AnimatePresence>
+        {toggleMenu && (
+          <motion.ul
+            transition={{ duration: 0.4 }}
+            initial={{ opacity: 0, scale: 0.8, y: -40 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: -40 }}
+            className="absolute top-20 right-0 md:hidden flex flex-col items-center gap-4 py-4 px-8 rounded-lg border-4 border-lightener-200 bg-darkener-200 shadow-card-200 backdrop-blur-xl font-medium text-lg origin-top"
+          >
+            <li onClick={() => setToggleMenu(false)}>
+              <a href="#home" className="cursor-pointer text-neutral-400 hover:text-white duration-300">
+                Home
+              </a>
+            </li>
+            <li onClick={() => setToggleMenu(false)}>
+              <a href="#howtoplay" className="cursor-pointer text-neutral-400 hover:text-white duration-300">
+                How to play
+              </a>
+            </li>
+            <li onClick={() => setToggleMenu(false)}>
+              <button
+                className="bg-transparent py-1 px-4 rounded-full border border-lightener-200 hover:text-white duration-300"
+                onClick={() => navigate("/auth/login")}
+              >
+                Login
+              </button>
+            </li>
+            <li onClick={() => setToggleMenu(false)}>
+              <button
+                className="bg-lightener-200 border border-transparent py-1 px-4 rounded-full hover:text-white duration-300"
+                onClick={() => navigate("/auth/register")}
+              >
+                Register
+              </button>
+            </li>
+          </motion.ul>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
