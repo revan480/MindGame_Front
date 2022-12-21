@@ -19,6 +19,10 @@ module.exports = {
     },
 
     extend: {
+      fontFamily: {
+        Rubik: ["Rubik Gemstones", "sans-serif"],
+      },
+
       colors: {
         primary: "#1b57f2",
 
