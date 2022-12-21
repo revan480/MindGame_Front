@@ -28,15 +28,13 @@ const InputField = ({
         id={name}
         type={type}
         placeholder={placeholder}
-        {...register(name, {
-          onChange: (e) => {
-            !!onChange && onChange(e);
-          },
-        })}
+        {...register(name)}
         className={twMerge(
           `${
-            errorMsg ? "bg-red-500 bg-opacity-20" : "bg-darkener-100"
-          } p-3 text-neutral-500 text-xs font-bold rounded-lg shadow-[inset_0px_3px_6px_rgba(0,0,0,.4)]`,
+            errorMsg
+              ? "bg-red-500 bg-opacity-20"
+              : "bg-darkener-100 hover:bg-darkener-200 focus:bg-darkener-200 duration-300"
+          } p-3 text-neutral-500 text-xs font-bold rounded-lg shadow-[inset_0px_3px_6px_rgba(0,0,0,.4)] autoc`,
           inputClassName
         )}
       />
