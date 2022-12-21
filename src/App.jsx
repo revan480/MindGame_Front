@@ -12,27 +12,25 @@ import Reset from "./pages/Auth/Reset";
 
 const App = () => {
   return (
-    <>
-      <Routes>
-        {/* public routes */}
-        <Route path="/" element={<LandingLayout />} />
-        <Route path="/auth" element={<AuthLayout />}>
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-          <Route path="confirm" element={<Confirm />} />
-          <Route path="forgot" element={<Forgot />} />
-          <Route path="reset" element={<Reset />} />
-        </Route>
+    <Routes>
+      {/* public routes */}
+      <Route path="/" element={<LandingLayout />} />
+      <Route path="/auth" element={<AuthLayout />}>
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+        <Route path="confirm" element={<Confirm />} />
+        <Route path="forgot" element={<Forgot />} />
+        <Route path="reset" element={<Reset />} />
+      </Route>
 
-        {/* private routes */}
-        <Route element={<RequireAuth />}>
-          <Route path="/room" element={<Room />} />
-        </Route>
+      {/* private routes */}
+      <Route element={<RequireAuth />}>{/* <Route path="/room" element={<Room />} /> */}</Route>
 
-        {/* undefined routes */}
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </>
+      <Route path="/room" element={<Room />} />
+
+      {/* undefined routes */}
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
   );
 };
 
