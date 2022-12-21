@@ -5,6 +5,7 @@ import rabbit from "../../assets/images/rabbit.png";
 
 const LevelCard = ({ level }) => {
   const [difficulty, setDifficulty] = useState(0);
+
   useLayoutEffect(() => {
     if (level > 4 && level <= 8) {
       setDifficulty(1);
