@@ -9,7 +9,7 @@ const AuthLayout = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    currentPath[0] === "auth" && navigate("login");
+    currentPath == "auth" && navigate("login");
   }, [currentPath]);
 
   return (
