@@ -7,7 +7,7 @@ import Register from "./pages/Auth/Register";
 import Confirm from "./pages/Auth/Confirm";
 import Forgot from "./pages/Auth/Forgot";
 import LandingLayout from "./pages/Landing/LandingLayout";
-import Lobby from "./pages/Lobby/Lobby";
+import LobbyLayout from "./pages/Lobby/LobbyLayout";
 import Reset from "./pages/Auth/Reset";
 
 const App = () => {
@@ -26,7 +26,7 @@ const App = () => {
       {/* private routes */}
       <Route element={<RequireAuth />}>{/* <Route path="/room" element={<Room />} /> */}</Route>
 
-      <Route path="/lobby" element={<Lobby />} />
+      <Route path="/lobby" element={<LobbyLayout />} />
 
       {/* undefined routes */}
       <Route path="*" element={<Navigate to="/" />} />

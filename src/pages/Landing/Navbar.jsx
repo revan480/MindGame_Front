@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { BiMenu } from "react-icons/all";
 import useClickOutside from "../../hooks/useClickOutside";
 import { AnimatePresence, motion } from "framer-motion";
+import MGLogo from "../../components/MGLogo";
+import ButtonRounded from "../../components/UI/ButtonRounded";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -14,12 +16,12 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav ref={navRef} className="fixed z-50 h-[60px] w-[90vw] lg:w-4/5 xl:w-3/5 top-8 left-1/2 -translate-x-1/2">
-      <div className="h-full w-full bg-darkener-200 rounded-full px-8 shadow-card-200 backdrop-blur-xl flex items-center justify-between font-medium text-lg">
+    <nav ref={navRef} className="navbar">
+      <div className="navbar-container">
         {/* left side */}
         <div className="flex items-center gap-9">
           {/* logo */}
-          <span className="font-black text-xl text-white">The Mindgame</span>
+          <MGLogo />
 
           {/* elements */}
           <ul className="hidden md:flex gap-6">
@@ -38,18 +40,10 @@ const Navbar = () => {
 
         {/* right */}
         <div className="hidden md:flex gap-3">
-          <button
-            className="bg-transparent py-1 px-4 rounded-full border border-lightener-200 hover:text-white duration-300"
-            onClick={() => navigate("/auth/login")}
-          >
+          <ButtonRounded onClick={() => navigate("/auth/login")} outlined>
             Login
-          </button>
-          <button
-            className="bg-lightener-200 border border-transparent py-1 px-4 rounded-full hover:text-white duration-300"
-            onClick={() => navigate("/auth/register")}
-          >
-            Register
-          </button>
+          </ButtonRounded>
+          <ButtonRounded onClick={() => navigate("/auth/register")}>Register</ButtonRounded>
         </div>
 
         {/* burger */}
