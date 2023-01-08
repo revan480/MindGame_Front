@@ -54,3 +54,11 @@ img {
 .position-center {
   @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
 }
+
+.navbar {
+  @apply fixed z-50 h-[60px] w-[90vw] lg:w-4/5 xl:w-3/5 top-8 left-1/2 -translate-x-1/2;
+}
+
+.navbar-container {
+  @apply h-full w-full bg-darkener-200 rounded-full px-8 shadow-card-200 backdrop-blur-xl flex items-center justify-between font-medium text-lg;
+}

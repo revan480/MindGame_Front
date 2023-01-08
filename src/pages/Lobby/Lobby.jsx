@@ -14,7 +14,7 @@ const Lobby = () => {
 
   return (
     <div
-      className={`w-full min-h-screen grid grid-cols-[2fr,1fr] gap-8 grid-rows-[auto,1fr] bg-gradient-radial-at-top from-lightener-100 to-transparent`}
+      className={`w-full pt-24 min-h-screen grid grid-cols-[2fr,1fr] gap-8 grid-rows-[auto,1fr] bg-gradient-radial-at-top from-lightener-100 to-transparent`}
     >
       {/* title */}
       <h1 className={`col-span-2 font-Rubik text-7xl text-center py-8`}>Lobby</h1>
