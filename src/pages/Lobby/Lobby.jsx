@@ -13,14 +13,14 @@ const Lobby = () => {
   const createRoom = (data) => {};
 
   return (
-    <div className={`grid grid-cols-[2fr,1fr] gap-8 grid-rows-[auto,1fr]`}>
+    <div className={`grid grid-cols-1 md:grid-cols-[2fr,1fr] gap-8 grid-rows-[auto,1fr]`}>
       {/* title */}
-      <h1 className={`col-span-2 font-Rubik text-7xl text-center py-8`}>Lobby</h1>
+      <h1 className={`md:col-span-2 font-Rubik text-7xl text-center py-8 order-1`}>Lobby</h1>
 
       {/* rooms */}
-      <div className={`${containerStyles}`}>
+      <div className={`${containerStyles} order-3 md:order-2`}>
         <h2 className={headerStyles}>Rooms</h2>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {[1, 2, 3, 4, 5, 6, 7, 8].map((room, index) => (
             <Room key={index} room={room} />
           ))}
@@ -28,7 +28,7 @@ const Lobby = () => {
       </div>
 
       {/* create */}
-      <div className={`${containerStyles}`}>
+      <div className={`${containerStyles} order-2 md:order-3`}>
         <h2 className={headerStyles}>Create a room</h2>
         <form onSubmit={handleSubmit(createRoom)} className="flex flex-col gap-4">
           {/* privacy checker */}
