@@ -62,3 +62,11 @@ img {
 .navbar-container {
   @apply h-full w-full bg-darkener-200 rounded-full px-8 shadow-card-200 backdrop-blur-xl flex items-center justify-between font-medium text-lg;
 }
+
+.top-light {
+  @apply bg-gradient-radial-at-top from-lightener-100 to-transparent;
+}
+
+.bottom-light {
+  @apply bg-gradient-radial-at-bottom from-lightener-100 to-transparent;
+}
