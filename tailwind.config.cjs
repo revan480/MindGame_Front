@@ -78,6 +78,7 @@ module.exports = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-radial-at-top": "radial-gradient(at top, var(--tw-gradient-stops))",
+        "gradient-radial-at-bottom": "radial-gradient(at bottom, var(--tw-gradient-stops))",
       },
 
       boxShadow: {
@@ -85,6 +86,10 @@ module.exports = {
         "card-200": "0 0 10px 0 rgba(0,0,0,0.2)",
         "card-300": "0 0 10px 0 rgba(0,0,0,0.3)",
         "card-400": "0 0 10px 0 rgba(0,0,0,0.4)",
+        "white-card-100": "0 0 10px 0 rgba(255,255,255,0.1)",
+        "white-card-200": "0 0 10px 0 rgba(255,255,255,0.2)",
+        "white-card-300": "0 0 10px 0 rgba(255,255,255,0.3)",
+        "white-card-400": "0 0 10px 0 rgba(255,255,255,0.4)",
       },
 
       fontSize: { xxs: ["0.625rem", "0.875rem"] },

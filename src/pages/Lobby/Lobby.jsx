@@ -13,9 +13,7 @@ const Lobby = () => {
   const createRoom = (data) => {};
 
   return (
-    <div
-      className={`w-full pt-24 min-h-screen grid grid-cols-[2fr,1fr] gap-8 grid-rows-[auto,1fr] bg-gradient-radial-at-top from-lightener-100 to-transparent`}
-    >
+    <div className={`grid grid-cols-[2fr,1fr] gap-8 grid-rows-[auto,1fr]`}>
       {/* title */}
       <h1 className={`col-span-2 font-Rubik text-7xl text-center py-8`}>Lobby</h1>
 
@@ -41,10 +39,17 @@ const Lobby = () => {
             </label>
           </div>
 
-          <InputField register={register} name="name" label="Room name" required />
+          <InputField register={register} id="roomName" name="name" label="Room name" required />
 
           {watch("private") && (
-            <InputField register={register} name="password" label="Room password" type="password" required />
+            <InputField
+              register={register}
+              id="roomPassword"
+              name="password"
+              label="Room password"
+              type="password"
+              required
+            />
           )}
 
           <Button>Create</Button>

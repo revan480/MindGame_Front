@@ -14,7 +14,7 @@ const Room = ({ room }) => {
       <Content title="Players" text="2" />
 
       <form onSubmit={handleSubmit(joinRoom)} className="mt-4 flex flex-col">
-        <InputField register={register} label="Password" name="password" required />
+        <InputField register={register} label="Password" id={`passwordRoom${room}`} name="password" required />
         <Button className="bg-neutral-700">Join</Button>
       </form>
     </div>

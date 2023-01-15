@@ -5,10 +5,10 @@ import { twMerge } from "tailwind-merge";
 const InputField = ({
   label,
   name,
+  id,
   type,
   placeholder,
   register,
-  onChange,
   required,
   errorMsg,
   className,
@@ -25,7 +25,7 @@ const InputField = ({
 
       {/* input */}
       <input
-        id={name}
+        id={id ?? name}
         type={type}
         placeholder={placeholder}
         {...register(name)}
