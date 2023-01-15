@@ -40,7 +40,7 @@ const InputField = ({
       />
 
       {/* error message */}
-      {!!errorMsg && <p className="absolute top-full left-0 text-red-500 text-xs">asdasd</p>}
+      {!!errorMsg && <p className="absolute top-full left-0 text-red-500 text-xs">{errorMsg}</p>}
     </div>
   );
 };
