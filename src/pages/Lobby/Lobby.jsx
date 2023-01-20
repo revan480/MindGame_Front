@@ -29,7 +29,7 @@ const Lobby = () => {
 
       {/* create */}
       <div className={`${containerStyles} order-2 md:order-3`}>
-        <h2 className={headerStyles}>Create a Pipeline!</h2>
+        <h2 className={headerStyles}>Create a Pipeline</h2>
         <form onSubmit={handleSubmit(createRoom)} className="flex flex-col gap-4">
           {/* privacy checker */}
           <div className="flex items-center w-fit">
