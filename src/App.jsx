@@ -9,6 +9,7 @@ import LandingLayout from "./pages/Landing/LandingLayout";
 import Lobby from "./pages/Lobby/Lobby";
 import Reset from "./pages/Auth/Reset";
 import LayoutAfterLogin from "./components/LayoutAfterLogin";
+import Game from "./pages/Room/Game";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
 
       <Route element={<LayoutAfterLogin />}>
         <Route path="/lobby" element={<Lobby />} />
+        <Route path="/room" element={<Game />} />
       </Route>
 
       {/* undefined routes */}

@@ -25,7 +25,7 @@ const Modal = ({ isVisible, setIsVisible, title, children, size, className }) =>
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className={`fixed overflow-y-auto py-16 sm:py-32 z-50 w-full h-full bg-darkener-500 backdrop-blur-lg top-0 left-0 flex justify-center`}
+          className={`fixed overflow-y-auto py-12 sm:py-24 z-50 w-full h-full bg-darkener-500 backdrop-blur-lg top-0 left-0 flex justify-center`}
         >
           <motion.div
             ref={modalBody}

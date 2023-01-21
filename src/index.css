@@ -48,7 +48,7 @@ img {
 }
 
 .card {
-  @apply relative w-60 h-72 bg-black rounded-xl border-8 border-black overflow-hidden select-none pointer-events-none;
+  @apply relative w-[7.5rem] h-36 bg-black rounded-xl border-8 border-black overflow-hidden select-none pointer-events-none;
 }
 
 .position-center {
