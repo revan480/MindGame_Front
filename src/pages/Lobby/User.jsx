@@ -5,7 +5,7 @@ const User = () => {
       <p className="text-lg font-medium text-center">Rafig Hajili</p>
 
       {/* is ready */}
-      <p className={`text-sm font-medium text-green-500`}>Ready!</p>
+      <p className={`text-sm font-medium text-green-500`}>Ready</p>
     </div>
   );
 };
