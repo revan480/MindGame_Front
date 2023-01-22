@@ -1,12 +1,33 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+import { login } from "../../api/auth";
 import Button from "../../components/UI/Button";
 import InputField from "../../components/UI/InputField";
+import Popup from "../../components/UI/Popup";
+import { authState } from "../../recoil/Auth";
 
 const Login = () => {
+  const setTokens = useSetRecoilState(authState);
+  const [popupMsg, setPopupMsg] = useState("");
+  const [popupType, setPopupType] = useState(false);
+
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = async (data) => {};
+  const navigate = useNavigate();
+
+  const onSubmit = async (data) => {
+    try {
+      const tokens = await login(data);
+      setTokens(tokens);
+      navigate("/lobby");
+    } catch (error) {
+      console.log(error);
+      setPopupType(false);
+      setPopupMsg("Wrong email or password!");
+    }
+  };
 
   return (
     <>
@@ -35,6 +56,8 @@ const Login = () => {
       <Link to="/auth/forgot" className="w-fit self-center text-sm font-medium hover:text-primary">
         Forgot your password?
       </Link>
+
+      <Popup message={popupMsg} setMessage={setPopupMsg} type={popupType} />
     </>
   );
 };

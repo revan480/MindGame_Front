@@ -4,7 +4,8 @@ import Button from "../../components/UI/Button";
 import InputField from "../../components/UI/InputField";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useEffect } from "react";
+import { useState } from "react";
+import { register as registerAcc } from "../../api/auth";
 
 const schema = yup.object().shape({
   email: yup.string().email("Invalid email!").required("Email required!"),
@@ -17,6 +18,9 @@ const schema = yup.object().shape({
 });
 
 const Register = () => {
+  const [popupMsg, setPopupMsg] = useState("");
+  const [popupType, setPopupType] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -26,7 +30,15 @@ const Register = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
-    // navigate("/auth/confirm");
+    try {
+      const tokens = await registerAcc(data);
+      // setTokens(tokens);
+      navigate("/auth/login");
+    } catch (error) {
+      console.log(error);
+      setPopupType(false);
+      setPopupMsg("Cannot register with those data!");
+    }
   };
 
   return (
@@ -62,6 +74,8 @@ const Register = () => {
         />
 
         <Button className="mt-2">Register</Button>
+
+        <Popup message={popupMsg} setMessage={setPopupMsg} type={popupType} />
       </form>
     </>
   );
