@@ -1,13 +1,13 @@
 import axios from "./axios";
 
 export const register = async (body) => {
-  const url = "/auth/local/signup";
+  const url = "/auth/register";
   const response = await axios.post(url, body);
-  return response.data.accessToken;
+  return response.data;
 };
 
 export const login = async (body) => {
-  const url = "/auth/local/signin";
+  const url = "/auth/login";
   const response = await axios.post(url, body);
   return response.data.accessToken;
 };

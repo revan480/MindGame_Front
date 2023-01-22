@@ -1,7 +1,7 @@
 import axios from "axios";
 import { updateAccessToken } from "./auth";
 
-export const BASE_URL = "http://207.154.251.94:3000/api";
+export const BASE_URL = "http://207.154.251.94:3000";
 
 export default axios.create({ baseURL: BASE_URL });
 
