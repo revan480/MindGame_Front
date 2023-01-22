@@ -35,6 +35,11 @@ const Navbar = () => {
                 How to play
               </a>
             </li>
+            <li>
+              <a href="#about" className="cursor-pointer text-neutral-400 hover:text-white duration-300">
+                About us
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -68,6 +73,11 @@ const Navbar = () => {
             <li onClick={() => setToggleMenu(false)}>
               <a href="#howtoplay" className="cursor-pointer text-neutral-400 hover:text-white duration-300">
                 How to play
+              </a>
+            </li>
+            <li onClick={() => setToggleMenu(false)}>
+              <a href="#about" className="cursor-pointer text-neutral-400 hover:text-white duration-300">
+                About
               </a>
             </li>
             <li onClick={() => setToggleMenu(false)}>
