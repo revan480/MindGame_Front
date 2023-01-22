@@ -19,7 +19,7 @@ const App = () => {
       <Route path="/auth" element={<AuthLayout />}>
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
-        {/* <Route path="confirm" element={<Confirm />} /> */}
+        <Route path="confirm" element={<Confirm />} />
         {/* <Route path="forgot" element={<Forgot />} /> */}
         {/* <Route path="reset" element={<Reset />} /> */}
       </Route>
