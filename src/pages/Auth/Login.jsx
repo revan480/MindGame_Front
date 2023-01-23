@@ -1,15 +1,12 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { useSetRecoilState } from "recoil";
 import { login } from "../../api/auth";
 import Button from "../../components/UI/Button";
 import InputField from "../../components/UI/InputField";
 import Popup from "../../components/UI/Popup";
-import { authState } from "../../recoil/Auth";
 
 const Login = () => {
-  const setTokens = useSetRecoilState(authState);
   const [popupMsg, setPopupMsg] = useState("");
   const [popupType, setPopupType] = useState(false);
 
@@ -19,8 +16,8 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      const tokens = await login(data);
-      setTokens(tokens);
+      const accessToken = await login(data);
+      localStorage.setItem("accessToken", accessToken);
       navigate("/lobby");
     } catch (error) {
       console.log(error);
